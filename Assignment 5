@@ -1,0 +1,60 @@
+Using System;
+Using System.Collections.Generic;
+Using System.ComponentModel;
+Using System.Data;
+Using System.Drawing;
+Using System.Linq;
+Using System.Text;
+Using System.Threading.Tasks;
+Using System.Windows.Forms;
+
+Namespace LoginForm
+{
+    Public partial class Form1 : Form
+    {
+        // Variables to store the allowed username and password
+        Private string allowedUsername = “username”;
+        Private string allowedPassword = “password”;
+
+        Public Form1()
+        {
+            InitializeComponent();
+        }
+
+        Private void button1_Click(object sender, EventArgs e)
+        {
+            // Validate the username and password
+            If (ValidateUsername(textBox1.Text) && ValidatePassword(textBox2.Text))
+            {
+                // Check the username and password against the allowed values
+                If (textBox1.Text == allowedUsername && textBox2.Text == allowedPassword)
+                {
+                    MessageBox.Show(“Login successful!”);
+                }
+                Else
+                {
+                    MessageBox.Show(“Invalid username or password.”);
+                }
+            }
+            Else
+            {
+                MessageBox.Show(“The username or password is invalid.”);
+            }
+        }
+
+        // Method to validate the username
+        Private bool ValidateUsername(string username)
+        {
+            // Add additional validation checks here, such as minimum length or allowed characters
+            Return true;
+        }
+
+        // Method to validate the password
+        Private bool ValidatePassword(string password)
+        {
+            // Add additional validation checks here, such as minimum length or required characters
+            Return true;
+        }
+    }
+
+ 
